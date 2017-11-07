@@ -1,3 +1,5 @@
+# This is a program that will go through several math processes with the user.
+
 import time
 
 MULTIPLICATION_CHOICE = 1
