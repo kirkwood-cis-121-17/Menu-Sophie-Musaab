@@ -6,17 +6,22 @@ def main():
     aa = False
     
     while aa == False:
+        try:
+			number = float(input("Input your number: "))
+	    except ValueError:
+		    print("Try again")
+		    number = float(input("Input your number: "))
         number = float(input("Input your number: "))
         menu()
         choice = int(input("Enter your choice: "))
         if choice == 1:
             print (ADDITION(number))
         elif choice == 2:
-            number = SUBTRACTION(number)
+            print (SUBTRACTION(number))
         elif choice == 3:
-            number  = MULTIPLICATION(number)
+            print (MULTIPLICATION(number))
         elif choice == 4:
-            number = DIVISION(number)
+            print (DIVISION(number))
         elif choice == 5:
             aa = True
             print("Exiting the program...")
