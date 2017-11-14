@@ -3,33 +3,37 @@
 def main():
     
     print("Welcome to the simple calculator")
-    aa = False
     
-    while aa == False:
+    while True:
         try:
-			number = float(input("Input your number: "))
-	    except ValueError:
-		    print("Try again")
-		    number = float(input("Input your number: "))
-        number = float(input("Input your number: "))
-        menu()
-        choice = int(input("Enter your choice: "))
-        if choice == 1:
-            print (ADDITION(number))
-        elif choice == 2:
-            print (SUBTRACTION(number))
-        elif choice == 3:
-            print (MULTIPLICATION(number))
-        elif choice == 4:
-            print (DIVISION(number))
-        elif choice == 5:
-            aa = True
-            print("Exiting the program...")
-        else:
-            print("Error: Invalid selection.")
-            choice = input("Enter a new choice")
+            number = float(input("Input your number: "))
+            break
+        except ValueError:
+            print("Try again")
+
+    menu()
+    while True:
+        try:
+            choice = int(input("Enter your choice: "))
+            if choice > 0 and choice < 6:
+                break
+        except:
+            print("Try again")
     
-    
+    if choice == 1:
+        print (ADDITION(number))
+    elif choice == 2:
+        print (SUBTRACTION(number))
+    elif choice == 3:
+        print (MULTIPLICATION(number))
+    elif choice == 4:
+        print (DIVISION(number))
+    elif choice == 5:
+        active = False
+        print("Exiting the program...")
+    else:
+        print("Error: Invalid selection.")
+        choice = input("Enter a new choice")
     
 def menu():
     print(" What do you wish to do with your number")
